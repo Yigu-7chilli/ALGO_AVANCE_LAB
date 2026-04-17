@@ -119,17 +119,17 @@ the slope of the final line estimates the fractal dimension.
 
 ### complexity analysis summary
 
-- `draw_sierpinski`
-  - 3 recursive calls at each level
-  - complexity: `O(3^d)`
+draw_sierpinski
+3 recursive calls at each level
+complexity: O(3^d)
 
-- `draw_tree`
-  - 2 recursive calls at each level
-  - complexity: `O(2^d)`
+draw_tree
+2 recursive calls at each level
+complexity: O(2^d)
 
-- `fractal_dimension`
-  - for each box size, the image is scanned
-  - complexity: `O(b * m^2)`
-  - where:
-    - `b` = number of box sizes
-    - `m x m` = image size
+fractal_dimension
+for each box size, the image is scanned
+complexity: O(b * m^2)
+where:
+b= number of box sizes
+m x m = image size
