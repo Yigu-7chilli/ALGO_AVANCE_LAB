@@ -3,7 +3,8 @@
 ## File Structure:
 ~~~
 /LAB_09_HardProblems/
-├── exercise1_
+├── ex1_influencer_coverage.py
+├── ex2_conflict_free_labeling.py
 └── README.md
 ~~~
 
