@@ -1,10 +1,4 @@
 def is_valid_labeling(labeling, graph):
-    """
-    check if a given labeling is valid.
-
-    a labeling is valid if every connected pair of users
-    has different labels.
-    """
 
     for user in graph:
         for friend in graph[user]:
@@ -14,13 +8,8 @@ def is_valid_labeling(labeling, graph):
     return True
 
 
-def can_use_label(user, label, labeling, graph):
-    """
-    check if one label can be assigned to one user.
 
-    the label is valid only if none of the already labeled friends
-    has the same label.
-    """
+def can_use_label(user, label, labeling, graph):
 
     for friend in graph[user]:
         if labeling[friend] == label:
@@ -29,11 +18,9 @@ def can_use_label(user, label, labeling, graph):
     return True
 
 
-def backtrack_label(index, users, labeling, graph, k):
-    """
-    try to assign labels to users one by one using backtracking.
-    """
 
+
+def backtrack_label(index, users, labeling, graph, k):
     if index == len(users):
         return True
 
@@ -51,13 +38,9 @@ def backtrack_label(index, users, labeling, graph, k):
     return False
 
 
-def assign_labels(k, graph):
-    """
-    try to label the graph using at most k labels.
 
-    return:
-        success, labeling
-    """
+
+def assign_labels(k, graph):
 
     users = list(graph.keys())
 
@@ -75,11 +58,8 @@ def assign_labels(k, graph):
     return False, []
 
 
-def find_min_labels(graph):
-    """
-    find the minimum number of labels needed to color the graph.
-    """
 
+def find_min_labels(graph):
     users = list(graph.keys())
     n = len(users)
 
@@ -96,9 +76,15 @@ def find_min_labels(graph):
 
 
 
+
+
+
+
+
+
 if __name__ == "__main__":
 
-    print("\n############## test 0: normal test ################")
+    print("\n################################ test 0: normal test #######################################")
 
     graph = {
         0: [1],
@@ -122,7 +108,10 @@ if __name__ == "__main__":
     print("labeling:", labeling)
 
 
-    print("\n############## test 1: empty graph ################")
+
+    
+    
+    print("\n######################## test 1: empty graph ################################")
 
     graph = {}
 
@@ -132,7 +121,7 @@ if __name__ == "__main__":
     print("labeling:", labeling)
 
 
-    print("\n############## test 2: single node graph ################")
+    print("\n############## test 2: single node graph ##################")
 
     graph = {
         0: []
@@ -154,7 +143,14 @@ if __name__ == "__main__":
     print("labeling:", labeling)
 
 
-    print("\n############## test 3: one edge graph ################")
+
+
+
+
+
+    
+
+    print("\n################### test 3: one edge graph ######################")
 
     graph = {
         0: [1],
@@ -177,7 +173,11 @@ if __name__ == "__main__":
     print("labeling:", labeling)
 
 
-    print("\n############## test 4: complete graph ################")
+
+
+
+    
+    print("\n############################### test 4: complete graph ######################################")
 
     graph = {
         0: [1, 2, 3],
@@ -202,7 +202,11 @@ if __name__ == "__main__":
     print("labeling:", labeling)
 
 
-    print("\n############## test 5: isolated nodes ################")
+
+
+
+    
+    print("\n########################### test 5: isolated nodes ##########################################")
 
     graph = {
         0: [],
@@ -226,7 +230,9 @@ if __name__ == "__main__":
     print("labeling:", labeling)
 
 
-    print("\n############## test 6: triangle graph ################")
+
+    
+    print("\n#################################### test 6: triangle graph ####################################")
 
     graph = {
         0: [1, 2],
@@ -248,3 +254,13 @@ if __name__ == "__main__":
     minimum_k, labeling = find_min_labels(graph)
     print("minimum k:", minimum_k)
     print("labeling:", labeling)
+
+
+
+
+
+
+
+
+
+
